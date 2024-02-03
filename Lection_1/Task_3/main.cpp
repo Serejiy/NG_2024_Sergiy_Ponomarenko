@@ -14,12 +14,12 @@ int main() {
         for (int stars = 0; stars < 2 * current_row + 1; ++stars)
             cout << "*";
 
-        cout << std::endl;
+        cout << endl;
     }
 
     for (int trunk_spaces = 0; trunk_spaces < height - 1; ++trunk_spaces)
         cout << " ";
-    cout << "*" << std::endl;
+    cout << "*" << endl;
 
     return 0;
 }
