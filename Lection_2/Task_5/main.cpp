@@ -1,5 +1,5 @@
 #include <iostream>
-#include <limits> // Для использования numeric_limits
+#include <limits>
 
 using namespace std;
 
@@ -8,7 +8,7 @@ const int MAX_CLIENTS = 10;
 struct DB {
     string name;
     int balance;
-    int clientID; // Changed field name
+    int clientID;
 };
 
 DB clients[MAX_CLIENTS];
@@ -24,15 +24,15 @@ void new_customer() {
             cout << "Enter your balance: ";
             if (cin >> balance && balance >= 0) {
                 clients[numClients].balance = balance;
-                break; // Выход из цикла, если ввод корректный
+                break;
             } else {
                 cout << "Invalid input. Please enter a non-negative number." << endl;
                 cin.clear(); // Очистка флага ошибки
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера ввода
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
         }
 
-        clients[numClients].clientID = numClients; // Assigning client ID as index
+        clients[numClients].clientID = numClients;
         numClients++;
         cout << endl;
     }
@@ -103,11 +103,11 @@ void existing_customer() {
             cout << "Enter deposit amount: ";
             if (cin >> amount && amount >= 0) {
                 deposit(input_clientID, amount);
-                break; // Выход из цикла, если ввод корректный
+                break;
             } else {
                 cout << "Invalid input. Please enter a non-negative number." << endl;
-                cin.clear(); // Очистка флага ошибки
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера ввода
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
         }
     } else if (choice == 'W') {
@@ -116,11 +116,11 @@ void existing_customer() {
             cout << "Enter withdrawal amount: ";
             if (cin >> amount && amount >= 0) {
                 withdraw(input_clientID, amount);
-                break; // Выход из цикла, если ввод корректный
+                break;
             } else {
                 cout << "Invalid input. Please enter a non-negative number." << endl;
                 cin.clear(); // Очистка флага ошибки
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера ввода
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
         }
     } else {
