@@ -22,9 +22,9 @@ void drawMap(char map[ROW_SIZE][COL_SIZE], position player, position enemy) {
     for (int row = 0; row < ROW_SIZE; row++) {
         for (int col = 0; col < COL_SIZE; col++) {
             if (row == player.y && col == player.x)
-                cout << "@";
+                cout << "\033[1;32m@\033[0m"; // Green bold '@' for player
             else if (row == enemy.y && col == enemy.x)
-                cout << "E";
+                cout << "\033[1;31mE\033[0m"; // Red bold 'E' for enemy
             else
                 cout << map[row][col];
         }
